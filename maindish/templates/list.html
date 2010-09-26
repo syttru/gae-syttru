@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<h1>ドメイン一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for selector in selectors %}
+    <tr>
+      <td>http://{{selector.domain}}{{selector.pathReg}}</td>
+      <td>{{selector.value}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p>
+<form method='post'>
+  <label>domain: <input type='text' name='domain'></label><br>
+  <label>path regexp: <input type='text' name='pathReg'></label><br>
+  <label>selector main content: <input type='text' name='value'></label><br>
+  <input type='submit'>
+</form>
+</p>
+</body>
+</html>

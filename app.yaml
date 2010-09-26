@@ -4,5 +4,7 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /maindish/?.*
+  script: maindish/main.py
 - url: .*
   script: main.py
